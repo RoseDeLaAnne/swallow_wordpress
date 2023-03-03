@@ -1,80 +1,80 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 ::selection {
-  color: var(--selection__color);
-  background-color: var(--selection__background-color);
+    color: var(--selection__color);
+    background-color: var(--selection__background-color);
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
+    margin: 0;
 
-  position: relative;
+    position: relative;
 
-  min-width: var(--min-width);
+    min-width: var(--min-width);
 
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
 
-  text-transform: var(--text-transform);
-  letter-spacing: var(--letter-spacing);
+    text-transform: var(--text-transform);
+    letter-spacing: var(--letter-spacing);
 
-  color: var(--color);
-  background-color: var(--background-color);
+    color: var(--color);
+    background-color: var(--background-color);
 }
 
 body,
 .page {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
 svg,
 img,
 video,
 a {
-  display: block;
+    display: block;
 }
 
 img,
 video {
-  object-fit: cover;
+    object-fit: cover;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 
-  color: inherit;
+    color: inherit;
 
-  outline: none;
+    outline: none;
 }
 
 input,
 button {
-  padding: 0;
+    padding: 0;
 
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
 
-  text-transform: inherit;
-  letter-spacing: inherit;
+    text-transform: inherit;
+    letter-spacing: inherit;
 
-  background: none;
+    background: none;
 
-  border: none;
-  outline: none;
+    border: none;
+    outline: none;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 h1,
@@ -84,24 +84,24 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
+    margin: 0;
 
-  font-size: inherit;
-  font-weight: inherit;
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 .h1 {
-  font-size: var(--h1__font-size);
+    font-size: var(--h1__font-size);
 }
 
 .h2 {
-  font-size: var(--h2__font-size);
+    font-size: var(--h2__font-size);
 }
 
 .h3 {
-  font-size: var(--h3__font-size);
+    font-size: var(--h3__font-size);
 }
 
 .p {
-  font-size: var(--p__font-size);
+    font-size: var(--p__font-size);
 }
