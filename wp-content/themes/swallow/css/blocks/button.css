@@ -1,0 +1,21 @@
+.button {
+  border-radius: 64px;
+
+  transition: color .5s ease-in-out, background-color .5s ease-in-out;
+}
+
+.button.button_ready-to-help {
+  padding: 16px 48px;
+
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+
+  color: #fff;
+  background-color: #F77F00;
+}
+
+.button.button_ready-to-help:hover {
+  color: #F77F00;
+  background-color: #fff;
+}

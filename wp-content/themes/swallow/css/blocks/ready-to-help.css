@@ -1,0 +1,13 @@
+.ready-to-help {
+  position: fixed;
+
+  right: 32px;
+  bottom: 32px;
+
+  width: 80px;
+  height: 80px;
+
+  background-color: yellow;
+
+  animation: readyToHelp 1.5s ease-in-out infinite alternate;
+}

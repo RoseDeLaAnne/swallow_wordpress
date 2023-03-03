@@ -1,0 +1,36 @@
+/* NAV */
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.page {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.page__title {
+  margin-bottom: 64px;
+
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 1440px;
+  width: 100%;
+}
+
+.main {
+  margin-bottom: 64px;
+}

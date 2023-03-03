@@ -1,0 +1,36 @@
+.team {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.team__item {
+  display: flex;
+  column-gap: 30px;
+}
+
+.team__item-box-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team__item-description {
+  display: flex;
+}
+
+.team__item-avatar{
+    border-radius: 50%;
+    height: 255px;
+    width: 255px;
+}
+
+.team__item-status{
+    text-align:center;
+}
+
+.team__item-name{
+    text-align:center;
+}
+

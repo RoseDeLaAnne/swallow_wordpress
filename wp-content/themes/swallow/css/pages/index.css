@@ -1,0 +1,40 @@
+.splash {
+  width: 100%;
+  height: 100vh;
+
+  /* background: url(../../images/index__splash.jpg) rgba(0, 0, 0, 0.3);
+  background-blend-mode: overlay;
+  background-size: cover; */
+}
+
+.splash__box-1 {
+  padding-top: var(--header__height);
+  padding-right: 25%;
+
+  height: calc(100vh - var(--header__height));
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.splash__title {
+  font-size: 64px;
+
+  color: #fff;
+}
+
+.splash__text {
+  margin-top: 24px;
+
+  font-size: 32px;
+  font-weight: 300;
+
+  color: #fff;
+}
+
+.splash__button {
+  margin-top: 48px;
+}

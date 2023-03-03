@@ -1,0 +1,38 @@
+.header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.header__box-1 {
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 1440px;
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header.header_fixed {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  height: var(--header__height);
+}
+
+.header.header_absolute {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  height: var(--header__height);
+}
