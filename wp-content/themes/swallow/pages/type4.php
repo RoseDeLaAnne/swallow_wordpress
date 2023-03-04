@@ -28,7 +28,7 @@ Template Name: type4
                         <?php the_title(); ?>
                     </h1>
                     <div class="community__box-1">
-                        <img src="../images/test_escort.jpg" alt="" class="articlas__image" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/test_escort.jpg" alt="" class="articlas__image" />
                         <p>
                             Текст статьи или новости
                         </p>

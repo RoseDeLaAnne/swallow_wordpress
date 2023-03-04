@@ -1,6 +1,8 @@
 <?php
 /*
 Template Name: type5
+
+Template Post Type: post, pages
 */
 ?>
 <!DOCTYPE html>
@@ -25,7 +27,7 @@ Template Name: type5
             <main class="main container">
                 <div class="purposes">
                     <h1 class="articles__title">
-                        <?php the_title(); ?>
+                        <?php the_field('news_title'); ?>
                     </h1>
                     <div class="community__box-1">
                         <p>
