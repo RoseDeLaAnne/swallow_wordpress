@@ -1,5 +1,5 @@
 <footer id="footer" class="footer">
-    <div class="footer__box-1">
+    <div class="footer__box-1 container">
         <a href="#" class="logo">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/logo.svg" alt="" class="logo__img" />
         </a>
@@ -23,7 +23,7 @@
 
     <hr class="footer__hr" />
 
-    <div class="footer__box-2">
+    <div class="footer__box-2 container">
         <div class="footer__box-21">
             <div class="footer__box-211">
                 <p class="footer__text">Благотварительный фонд «ЛАСТОЧКА»</p>

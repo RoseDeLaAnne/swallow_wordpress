@@ -1,3 +1,10 @@
 .logo__img {
-  width: calc(64px + (192 - 64) * (100vw - 320px) / (1920 - 320));
+    width: calc(96px + (192 - 96) * (100vw - 320px) / (1920 - 320));
+    height: auto;
+}
+
+@media (max-width: 1200px) {
+    .logo__img {
+        width: 144px;
+    }
 }

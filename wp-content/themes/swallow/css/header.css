@@ -9,16 +9,14 @@
 }
 
 .header__box-1 {
-    margin-right: auto;
-    margin-left: auto;
-
-    max-width: 1600px;
     width: 100%;
 
     display: flex;
 
     align-items: center;
     justify-content: space-between;
+
+    column-gap: 64px;
 }
 
 .header.header_fixed {

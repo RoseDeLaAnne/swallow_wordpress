@@ -23,7 +23,7 @@
 <body>
     <div class="page">
         <header id="header" class="header header_index">
-            <div class="header__box-1">
+            <div class="header__box-1 container">
                 <a href="index" class="logo">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1645.333" height="765.333" version="1.0"
                         class="logo__img" viewBox="0 0 1234 574" style="fill: #fff;">
