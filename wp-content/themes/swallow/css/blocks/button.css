@@ -1,7 +1,8 @@
 .button {
     border-radius: 64px;
 
-    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out,
+        opacity 0.5s ease-in-out;
 }
 
 .button.button_ready-to-help {
@@ -18,4 +19,23 @@
 .button.button_ready-to-help:hover {
     color: #f77f00;
     background-color: #fff;
+}
+
+.button.button_read-more {
+    padding-top: calc(8px + (16 - 8) * (100vw - 320px) / (1920 - 320));
+    padding-bottom: calc(8px + (16 - 8) * (100vw - 320px) / (1920 - 320));
+
+    padding-right: calc(24px + (48 - 24) * (100vw - 320px) / (1920 - 320));
+    padding-left: calc(24px + (48 - 24) * (100vw - 320px) / (1920 - 320));
+
+    font-size: calc(12px + (24 - 16) * (100vw - 320px) / (1920 - 320));
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    color: #fff;
+    background-color: #3e78b2;
+}
+
+.button.button_read-more:hover {
+    opacity: 0.5;
 }

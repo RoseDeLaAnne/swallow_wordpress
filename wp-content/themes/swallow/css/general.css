@@ -24,6 +24,8 @@
 .page__title {
     margin-bottom: calc(24px + (64 - 24) * (100vw - 320px) / (1920 - 320));
 
+    font-size: calc(32px + (64 - 32) * (100vw - 320px) / (1920 - 320));
+
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }

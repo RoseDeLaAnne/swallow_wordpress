@@ -27,10 +27,27 @@ Template Name: type3
                     <?php the_title(); ?>
                 </h1>
                 <div class="news__box-1">
-                    <h2 class="news__item-name">Название новости</h2>
-                    <p class="news__item-name">Краткое описание новости</p>
                     <div class="news__item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index__splash.jpg" alt="" class="news__item-img" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index__splash.jpg" alt=""
+                            class="news__item-img" />
+                        <div class="news__item-box-1">
+                            <div class="news__item-box-11">
+                                <h2 class="h2 news__item-name">Название новости</h2>
+                                <p class="news__item-description">Краткое описание новости</p>
+                            </div>
+                            <button class="news__item-button button button_read-more">Читать далее</button>
+                        </div>
+                    </div>
+                    <div class="news__item">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index__splash.jpg" alt=""
+                            class="news__item-img" />
+                        <div class="news__item-box-1">
+                            <div class="news__item-box-11">
+                                <h2 class="news__item-name">Название новости</h2>
+                                <p class="news__item-description">Краткое описание новости</p>
+                            </div>
+                            <button class="news__item-button button button_read-more">Читать далее</button>
+                        </div>
                     </div>
                 </div>
             </main>
