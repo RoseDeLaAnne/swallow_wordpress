@@ -3,7 +3,7 @@
         <a href="#" class="logo">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/logo.svg" alt="" class="logo__img" />
         </a>
-        <nav class="nav">
+        <nav class="nav nav_footer">
             <ul class="nav__box-1">
                 <li class="nav__item">
                     <a href="about-community" class="nav__item-link">О сообществе</a>

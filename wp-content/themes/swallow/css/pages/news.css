@@ -58,7 +58,6 @@
 
 @media (max-width: 576px) {
     .news__item-name {
-        /* font-size: calc(16px + (24 - 16) * (100vw - 320px) / (576 - 320)); */
         font-size: 24px;
     }
 }

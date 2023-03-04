@@ -22,6 +22,103 @@
 
 <body>
     <div class="page">
+        <div class="modal">
+            <button class="modal__close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 24 24"
+                    class="modal__close-button-icon">
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+
+            <div class="modal__inner">
+                <nav class="nav nav_adaptive">
+                    <ul class="nav__box-1">
+                        <li class="nav__item">
+                            <a href="about-community" class="nav__item-link">О сообществе</a>
+                            <ul class="nav-dropdown">
+                                <li class="nav-dropdown__item">
+                                    <a href="about-community" class="nav-dropdown__item-link">О сообществе</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="team" class="nav-dropdown__item-link">Команда</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="purposes" class="nav-dropdown__item-link">Цели</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="tasks" class="nav-dropdown__item-link">Задачи</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="statutory-documents" class="nav-dropdown__item-link">Уставные документы</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="reports" class="nav-dropdown__item-link">Отчеты</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="contacts" class="nav-dropdown__item-link">Контакты</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="partners" class="nav-dropdown__item-link">Партнёры</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="news" class="nav__item-link">Материалы</a>
+                            <ul class="nav-dropdown">
+                                <li class="nav-dropdown__item">
+                                    <a href="news" class="nav-dropdown__item-link">Новости</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="articles" class="nav-dropdown__item-link">Статьи</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="stories" class="nav-dropdown__item-link">Истории</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="literature" class="nav-dropdown__item-link">Литература</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="club" class="nav__item-link">Программы и проекты</a>
+                            <ul class="nav-dropdown">
+                                <li class="nav-dropdown__item">
+                                    <a href="club" class="nav-dropdown__item-link">Клуб приёмных родителей</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="resource-groups" class="nav-dropdown__item-link">Ресурсные кружки "На
+                                        равных"</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="school" class="nav-dropdown__item-link">Школа осознанного родительства</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="post-boarding-support" class="nav-dropdown__item-link">Постинтернатное
+                                        сопровождение</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="sos-help" class="nav-dropdown__item-link">Помощь в тяжелой жизненной
+                                        ситуации</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="consultation" class="nav-dropdown__item-link">Консультация специалистов</a>
+                                </li>
+                                <li class="nav-dropdown__item">
+                                    <a href="to-future-parents" class="nav-dropdown__item-link">Будущим приёмным
+                                        родителям</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="employee-offers" class="nav__item-link">Предложения о сотрудниках</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
         <header id="header" class="header header_index">
             <div class="header__box-1 container">
                 <a href="index" class="logo">
@@ -39,7 +136,14 @@
                             d="M869 423.3c-31.8 23.2-57.8 35.9-90.8 44.2-10.7 2.7-26.9 5.5-31.9 5.5-1.7 0-3.5.5-3.9 1.1-.8 1.3 10.9.6 27.6-1.6 29.9-4 51.7-11.6 78-27.2 26.7-15.9 32.6-20.3 30.9-23.4-1.4-2.8-4.8-2.3-9.9 1.4zM15.2 437.2c-1.6 1.6-1.4 5.6.6 15.7 2.7 13.1 4.4 11.7 7.3-6.1 1-6.2 1-7.9 0-9.2-1.6-1.9-6.2-2.1-7.9-.4zM33.2 437.2c-1.6 1.6-1.5 5.3.4 15.9 1.1 5.8 2.1 8.9 3 8.9 1.5 0 1.8-.9 3.9-12.7 1.9-10.6 1.2-13.3-3.3-13.3-1.6 0-3.3.5-4 1.2zM471.2 437.2c-1.6 1.6-1.5 4.7.4 14.8 1.6 8.3 2.7 11 4 9.8.8-.9 4.4-17.7 4.4-20.8 0-3.3-1.7-5-5-5-1.4 0-3.1.5-3.8 1.2zM489.2 437.2c-1.6 1.6-1.5 6.4.5 16.4 2.5 12.8 3.9 11.4 7.4-7.2 1.4-7.5.3-10.4-3.9-10.4-1.6 0-3.3.5-4 1.2zM63.2 442.6c.2.9 1.9 2.2 3.8 2.8 1.9.6 4 2.2 4.7 3.6 4 7.9-1.7 38.1-9 48.2l-3 4.2-1.9-2.7c-1.4-2-2.8-2.7-5.2-2.7-3.9 0-5.6 1.5-5.6 5.2 0 6.2 7.3 8.8 13.6 4.9 9.5-5.8 15.4-21.8 17.6-47.3l1.1-13.9 8.6.3 8.6.3.3 26.1c.1 15.2-.2 27.3-.7 28.7-.7 1.9-2 2.8-4.6 3.3-2 .3-3.5 1.2-3.5 2 0 1.1 2.6 1.4 13.5 1.4s13.5-.3 13.5-1.4c0-.8-1.2-1.7-2.7-2.1-5.4-1.3-5.3-.8-5.3-29.5s-.1-28.1 5.3-29.4c1.5-.3 2.7-1.3 2.7-2.1 0-1.3-3.7-1.5-26.1-1.5-23.5 0-26 .2-25.7 1.6zM133.5 462.3c-5.9 2.8-8.3 6.4-6.9 10.5 1.1 3.1 4.1 4 7.5 2.2 1.8-1 2.1-1.8 1.6-5.1-.5-4.1.4-5.6 3.8-5.9 6.7-.7 9.9 1.7 11 8.2.9 5.2.1 5.9-10 9.3-13.2 4.5-16.5 7.6-16.5 15.6 0 3.3.7 4.8 3.5 7.6 3.4 3.4 3.8 3.5 9.4 3.1 4.4-.3 6.8-1.1 9.4-3.1l3.6-2.7 3 3c3.1 3.2 6.8 3.8 11.5 2 3.7-1.4 3.4-4-.4-4-1.9 0-3.3-.7-4-1.9-.5-1.1-1-8.5-1-16.8 0-9.8-.5-15.6-1.3-17.2-3.5-6.9-15-9.2-24.2-4.8zm17.5 22.1c0 1.2-.3 5.1-.6 8.5-.6 5.5-1 6.3-3.9 8.1-8.8 5.4-16.6-1.1-12.1-9.9 1.7-3.2 5.1-5.6 10.4-7.6 5.3-1.9 6.2-1.8 6.2.9zM187.5 460.6c-4.4 1.1-10 6.1-12.8 11.4-2.6 5-2.8 6.3-2.5 13.5.4 9.4 2.5 14.3 8.2 18.9 5.1 4.1 14.3 4.9 21 1.7 5.2-2.6 10.4-8.7 8.8-10.3-.8-.8-2.4.1-5.6 3-3.8 3.5-5.2 4.2-8.7 4.2-9.2 0-14.4-7.3-14.4-20 .1-5.8.6-8.6 2.4-12.3 2.7-5.6 4.8-6.9 10.4-6.5l4.2.3v5.4c0 4.9.3 5.7 2.6 7 7.9 4.5 10.4-8.6 2.6-14.1-3-2.2-11.4-3.3-16.2-2.2zM274 461.6c-19.9 8.6-17.7 41.4 3.1 46.4 5.8 1.4 11.1.7 16.4-2.3 11.4-6.4 14.9-25.2 6.8-36.9-5.2-7.5-17.7-10.9-26.3-7.2zm16 5.2c3.8 3.9 5.3 10 4.8 19.7-.6 12.4-4.9 18.5-12.9 18.5-4 0-9.3-5.2-10.8-10.5-1.4-5.1-1.4-15.9 0-20.9.6-2.2 2.4-5.2 3.9-6.8 2.3-2.3 3.7-2.8 7.5-2.8s5.2.5 7.5 2.8zM213 468.5c0 5.7.3 7.5 1.4 7.5.7 0 1.9-1.4 2.6-3 2.4-5.9 4.8-8 9.1-8h3.9v17.9c0 19.1-.5 21.1-5.1 21.1-1 0-1.9.7-1.9 1.5 0 1.2 1.9 1.5 11.5 1.5 9.2 0 11.5-.3 11.5-1.4 0-.8-1.2-1.7-2.7-2.1-1.5-.3-3.1-1.2-3.5-1.8-.4-.7-.8-9.2-.8-19V465h3.5c3.8 0 6.4 2.2 9 7.6.9 1.9 2.3 3.4 3.1 3.4 1.2 0 1.4-1.3 1.2-7.3l-.3-7.2-21.2-.3-21.3-.2v7.5zM309.4 462.2c-.4.6-.3 1.3.2 1.5 5.5 2 5.9 2.6 6.5 11.3.3 4.7 1.2 9.5 1.9 10.7 2.9 4.5 10.4 6.1 19 3.9 3.4-.9 6.4-1.6 6.6-1.6.3 0 .4 3.3.2 7.2-.3 7.3-.3 7.3-3.6 8.3-6 1.7-2.8 3 8.6 3.3 8.6.2 11.2 0 11.2-1 0-.7-1.5-2-3.3-2.8l-3.2-1.5-.3-16c-.1-8.8 0-17 .3-18.1.3-1.4 1.5-2.4 3.6-2.8 1.8-.3 2.9-1.1 2.7-1.8-.3-.9-3.5-1.3-11.3-1.3-11.5 0-14 1.1-8.3 3.6l3.3 1.4.3 8.4c.2 5.8-.1 8.7-.9 9.2-2.8 1.7-9.8 2-13.3.5-4-1.6-5-4.6-4.4-13.1.3-4.6.6-5.1 3.6-6.4 1.8-.8 3.1-2 2.9-2.5-.5-1.6-21.3-2-22.3-.4zM366.4 462.2c-.4.6-.3 1.3.2 1.5.5.2 2 .9 3.4 1.6l2.5 1.3.3 17.3c.3 18-.1 20.1-3.9 20.1-1.1 0-1.9.7-1.9 1.5 0 1.2 1.9 1.5 11 1.5s11-.3 11-1.5c0-.8-.8-1.5-1.8-1.5-3.7 0-5.2-3.2-5.2-11v-7.3l3.2.7c5.6 1.1 10 6.7 12.8 16.3l1.3 4.3h7.9c6.3 0 7.8-.3 7.8-1.5 0-.8-.8-1.5-1.8-1.5-3.1 0-6-2.8-8.5-8.3-2.1-4.6-7-10.7-8.6-10.7-.3 0-1.2-.4-1.9-.9-1.1-.6-.8-1.6 1.2-4.5 1.3-2 3.2-5.7 4.2-8.1 1.9-5.1 2.4-5.3 4.9-2.5 3.3 3.6 8.5 2 8.5-2.6 0-3.4-2.6-5.4-7.2-5.4-5 0-8.5 3.4-11.1 10.8-2.3 6.7-5.4 10.2-9.2 10.5l-3 .2v-16l3.2-1.5c1.8-.8 3.1-2 2.9-2.5-.4-1.5-21.3-1.9-22.2-.3zM897.5 487.4c-3.3 3-10.8 9.5-16.7 14.3-5.9 4.8-10.7 9.1-10.7 9.4-.2 1.9 4.5 1.4 9-.9 6-3.1 25.3-18.3 27.5-21.7 1.8-2.8 1-6.5-1.4-6.5-1 0-4.4 2.5-7.7 5.4z" />
                     </svg>
                 </a>
-                <nav class="nav">
+                <button class="header__menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 24 24"
+                        class="header__menu-button-icon">
+                        <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4 17h16M4 12h16M4 7h16" />
+                    </svg>
+                </button>
+                <nav class="nav nav_header">
                     <ul class="nav__box-1">
                         <li class="nav__item">
                             <a href="about-community" class="nav__item-link">О сообществе</a>

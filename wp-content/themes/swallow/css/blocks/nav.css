@@ -1,20 +1,35 @@
 /* NAV */
 
 @media (max-width: 1200px) {
-    .nav {
+    .nav_header {
         display: none;
     }
 }
 
-.nav__box-1 {
-    display: flex;
+.nav.nav_adaptive .nav__box-1 {
+    flex-direction: column;
 
-    align-items: center;
-
-    column-gap: calc(16px + (24 - 16) * (100vw - 320px) / (1920 - 320));
+    row-gap: calc(16px + (32 - 16) * (100vw - 320px) / (1920 - 320));
 }
 
-.nav ul li ul {
+.nav.nav_adaptive .nav__item-link {
+    position: relative;
+
+    font-size: 32px;
+
+    /* text-align: center; */
+    white-space: normal;
+
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    .nav.nav_adaptive .nav__item-link {
+        font-size: calc(20px + (32 - 20) * (100vw - 320px) / (1200 - 320));
+    }
+}
+
+.nav.nav_header .nav-dropdown {
     position: absolute;
 
     top: 40px;
@@ -25,15 +40,26 @@
     visibility: hidden;
     opacity: 0;
 
-    transition: transform 0.25s ease-in-out, visibility 0.25s ease-in-out,
-        opacity 0.25s ease-in-out;
+    transition: transform 5s ease-in-out, visibility 5s ease-in-out,
+        opacity 5s ease-in-out;
 }
 
-.nav ul li:hover > ul {
+.nav.nav_header .nav__item:hover > .nav-dropdown {
     transform: scale(1);
 
     visibility: visible;
     opacity: 1;
+}
+
+.nav.nav_header .nav__box-1,
+.nav.nav_adaptive .nav__box-1 {
+    display: flex;
+
+    column-gap: calc(16px + (24 - 16) * (100vw - 320px) / (1920 - 320));
+}
+
+.nav.nav_header .nav__box-1 {
+    align-items: center;
 }
 
 .nav__item {
@@ -63,7 +89,7 @@
 
 /* NAV-DROPDOWN */
 
-.nav-dropdown {
+.nav.nav_header .nav-dropdown {
     padding-top: 16px !important;
     padding-bottom: 16px !important;
 
@@ -81,13 +107,13 @@
     border-radius: 16px;
 }
 
-.nav-dropdown:hover {
+.nav.nav_header .nav-dropdown:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 
     transform: translateY(5px) !important;
 }
 
-.nav-dropdown__item {
+.nav.nav_header .nav-dropdown__item {
     padding-right: 32px;
     padding-left: 32px;
 }
@@ -106,4 +132,10 @@
 
 .nav-dropdown__item-link:hover {
     transform: scale(1.05);
+}
+
+.nav.nav_adaptive .nav-dropdown__item-link {
+    white-space: normal;
+
+    color: #fff;
 }
