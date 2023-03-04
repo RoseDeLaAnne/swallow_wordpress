@@ -18,6 +18,8 @@ add_action( 'wp_enqueue_scripts', function() {
   wp_enqueue_style( 'blocks-logo', get_template_directory_uri() . '/css/blocks/logo.css' );
   wp_enqueue_style( 'blocks-button', get_template_directory_uri() . '/css/blocks/button.css' );
   wp_enqueue_style( 'blocks-ready-to-help', get_template_directory_uri() . '/css/blocks/ready-to-help.css' );
+  wp_enqueue_style( 'blocks-partners', get_template_directory_uri() . '/css/blocks/partners.css' );
+  wp_enqueue_style( 'blocks-modal', get_template_directory_uri() . '/css/blocks/modal.css' );
 
   wp_enqueue_style( 'index', get_template_directory_uri() . '/css/pages/index.css' );
   wp_enqueue_style( 'literature', get_template_directory_uri() . '/css/pages/literature.css' );

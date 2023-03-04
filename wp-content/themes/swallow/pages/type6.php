@@ -26,7 +26,7 @@ Template Name: type6
                 <div class="team">
                     <div class="team__item">
                         <div class="team__item-box-1">
-                            <img src="../images/test.jpg" alt="photo_of_member" class="team__item-avatar" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/test.jpg" alt="photo_of_member" class="team__item-avatar" />
                             <h2 class="team__item-name">Lorem ipsum dolor</h2>
                             <h3 class="team__item-status">
                                 Director of company

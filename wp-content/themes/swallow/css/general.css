@@ -22,7 +22,7 @@
 }
 
 .page__title {
-    margin-bottom: 64px;
+    margin-bottom: calc(24px + (64 - 24) * (100vw - 320px) / (1920 - 320));
 
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -37,6 +37,6 @@
 }
 
 .main {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: calc(24px + (64 - 24) * (100vw - 320px) / (1920 - 320));
+    padding-bottom: calc(24px + (64 - 24) * (100vw - 320px) / (1920 - 320));
 }
