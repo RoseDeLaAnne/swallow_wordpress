@@ -30,7 +30,7 @@ Template Name: type3
                     <h2 class="news__item-name">Название новости</h2>
                     <p class="news__item-name">Краткое описание новости</p>
                     <div class="news__item">
-                        <img src="../images/index__splash.jpg" alt="" class="news__item-img" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index__splash.jpg" alt="" class="news__item-img" />
                     </div>
                 </div>
             </main>

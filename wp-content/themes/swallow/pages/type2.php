@@ -29,7 +29,7 @@ Template Name: type2
                     </h1>
                     <div class="partners__box-1">
                         <div class="partners__item">
-                            <img src="../icons/logo.svg" alt="" class="partners__img" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="" class="partners__img" />
                         </div>
                     </div>
                 </div>
