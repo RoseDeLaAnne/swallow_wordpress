@@ -35,7 +35,7 @@ Template Name: type3
                                 <h2 class="h2 news__item-name">Название новости</h2>
                                 <p class="news__item-description">Краткое описание новости</p>
                             </div>
-                            <button class="news__item-button button button_read-more">Читать далее</button>
+                            <a href="#" class="news__item-button button button_read-more">Читать далее</a>
                         </div>
                     </div>
                     <div class="news__item">
@@ -46,10 +46,28 @@ Template Name: type3
                                 <h2 class="news__item-name">Название новости</h2>
                                 <p class="news__item-description">Краткое описание новости</p>
                             </div>
-                            <button class="news__item-button button button_read-more">Читать далее</button>
+                            <a href="#" class="news__item-button button button_read-more">Читать далее</a>
                         </div>
                     </div>
                 </div>
+
+                <nav class="page-navigation">
+                    <ul class="pagination">
+                        <li class="pagination__item">
+                            <a class="pagination__link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="pagination__item"><a class="pagination__link" href="?page=1">1</a></li>
+                        <li class="pagination__item"><a class="pagination__link" href="?page=2">2</a></li>
+                        <li class="pagination__item"><a class="pagination__link" href="?page=3">3</a></li>
+                        <li class="pagination__item">
+                            <a class="pagination__link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </main>
         </div>
         <?php get_footer(); ?>

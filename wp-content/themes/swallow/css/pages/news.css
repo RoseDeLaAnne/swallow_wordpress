@@ -64,4 +64,6 @@
 
 .news__item-button {
     margin-top: 16px;
+
+    display: inline-flex;
 }
