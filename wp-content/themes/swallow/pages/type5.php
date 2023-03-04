@@ -1,6 +1,11 @@
 <?php
 /*
 Template Name: type5
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 */
 ?>
 <!DOCTYPE html>
