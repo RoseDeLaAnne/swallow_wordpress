@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: purposes
+Template Name: school
 */
 ?>
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ Template Name: purposes
         <div class="page__box-1">
             <?php get_header(); ?>
             <main class="main container">
-                
+
             </main>
         </div>
         <?php get_footer(); ?>

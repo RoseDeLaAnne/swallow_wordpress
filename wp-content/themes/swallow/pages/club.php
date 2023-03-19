@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: purposes
+Template Name: club
 */
 ?>
 <!DOCTYPE html>

@@ -37,7 +37,7 @@
             <div class="modal__inner">
                 <div class="donate">
                     <h1 class="donate__title">Пожертвовать</h1>
-                    <form class="donate-form">
+                    <form action="sendEmail.php" method="POST" class="donate-form">
                         <input type="text" class="donate-form__name" placeholder="Ваше имя (обязательно)">
                         <input type="text" class="donate-form__email" placeholder="E-mail (обязательно)">
                         <input type="text" class="donate-form__phone-number" placeholder="Телефон">

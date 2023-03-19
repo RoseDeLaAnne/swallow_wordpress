@@ -23,21 +23,7 @@ Template Name: tasks
         <div class="page__box-1">
             <?php get_header(); ?>
             <main class="main container">
-                <div class="tasks">
-                    <h1 class="h1">
-                        <?php the_title(); ?>
-                    </h1>
-                    <?php the_content(); ?>
-                    <!-- <div class="tasks__box-1">
-                        <ul>
-                            <li>
-                                <p class="tasks__item-text">
-                                    Список 1
-                                </p>
-                            </li>
-                        </ul>
-                    </div> -->
-                </div>
+                
             </main>
         </div>
         <?php get_footer(); ?>

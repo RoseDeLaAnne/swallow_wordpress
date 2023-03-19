@@ -45,7 +45,18 @@ a {
 
 img,
 video {
+    transition: transform 0.5s ease-in-out;
+
     object-fit: cover;
+}
+
+img:hover,
+video:hover {
+    transform: scale(1.025);
+
+    object-fit: cover;
+
+    cursor: pointer;
 }
 
 a {

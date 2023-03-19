@@ -25,17 +25,14 @@ Template Post Type: post, pages
         <div class="page__box-1">
             <?php get_header(); ?>
             <main class="main container">
-                <div class="purposes">
-                    <h1 class="stories__title">
-                        <?php the_field('stories_title') ?>
+                <div class="story">
+                    <h1 class="story__name">
+                        <?php the_title(); ?>
                     </h1>
-                    <div class="community__box-1">
-                        <p>
-                            <?php the_field('stories_description'); ?>
-                        </p>
-
-                        <img class="stories__item-image" src="<?php the_field('stories_image'); ?>" alt="">;
-                    </div>
+                    <img class="story__image" src="<?php the_field('image'); ?>" alt="">
+                    <p class="story__description">
+                        <?php the_content(); ?>
+                    </p>
                 </div>
             </main>
         </div>

@@ -1,6 +1,6 @@
 <header id="header" class="header">
     <div class="header__box-1 container">
-        <a href="index" class="logo">
+        <a href="/" class="logo">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/logo.svg" alt="" class="logo__img" />
         </a>
         <button class="header__menu-button">

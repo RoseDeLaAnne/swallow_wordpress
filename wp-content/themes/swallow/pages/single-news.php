@@ -1,7 +1,6 @@
 <?php
 /*
 Template Name: single-news
-
 Template Post Type: post, pages
 */
 ?>
@@ -25,17 +24,14 @@ Template Post Type: post, pages
         <div class="page__box-1">
             <?php get_header(); ?>
             <main class="main container">
-                <div class="purposes">
-                    <h1 class="news__title">
-                        <?php the_field('news_title') ?>
+                <div class="single-news">
+                    <h1 class="single-news__name">
+                        <?php the_title(); ?>
                     </h1>
-                    <div class="community__box-1">
-                        <p>
-                            <?php the_field('news_description'); ?>
-                        </p>
-
-                        <img class="news__item-image" src="<?php the_field('news_image'); ?>" alt="">;
-                    </div>
+                    <img class="single-news__image" src="<?php the_field('image'); ?>" alt="">
+                    <p class="single-news__description">
+                        <?php the_content(); ?>
+                    </p>
                 </div>
             </main>
         </div>

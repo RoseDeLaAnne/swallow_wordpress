@@ -62,6 +62,10 @@
     }
 }
 
+.stories__item-description {
+    font-size: 18px;
+}
+
 .stories__item-button {
     margin-top: 16px;
 
