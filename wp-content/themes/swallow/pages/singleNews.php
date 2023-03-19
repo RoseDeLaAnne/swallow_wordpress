@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: article
+Template Name: singleNews
 
 Template Post Type: post, pages
 */
@@ -22,26 +22,6 @@ Template Post Type: post, pages
 
 <body>
     <div class="page">
-
-        <div class="page__box-1">
-            <?php get_header(); ?>
-            <main class="main container">
-                <div class="purposes">
-                    <h1 class="articles__title">
-                        <?php the_field('article_title') ?>
-                    </h1>
-                    <div class="community__box-1">
-                        <p>
-                            <?php the_field('article_description'); ?>
-                        </p>
-
-                        <img class="article__item-image" src="<?php the_field('article_image'); ?>" alt="">;
-                    </div>
-                </div>
-            </main>
-        </div>
-        <?php get_footer(); ?>
-=======
         <div class="modal">
             <button class="modal__close-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 24 24"
@@ -162,9 +142,9 @@ Template Post Type: post, pages
                             // get ACF fields
                             $post_id = get_the_ID(); // get the ID of the current post
                             $post_url = get_permalink($post_id); // get the URL of the current post
-                            $name = get_field('articles_title');
-                            $description = get_field('articles_description');
-                            $picture = get_field('articles_image');
+                            $name = get_field('news_title');
+                            $description = get_field('news_description');
+                            $picture = get_field('news_image');
                             // output the fields
                             echo '<div class="news__item">';
                             echo '<img class="news__item-image" src="' . $picture . '" alt="' . $name . '">';
@@ -233,7 +213,6 @@ Template Post Type: post, pages
                             <a href="#" class="news__item-button button button_read-more">Читать далее</a>
                         </div>
                     </div> -->
-
 </body>
 
 </html>

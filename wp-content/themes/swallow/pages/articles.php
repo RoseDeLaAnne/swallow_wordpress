@@ -116,14 +116,16 @@ Template Name: articles
                 </nav>
             </div>
         </div>
-        
+
         <div class="page__box-1">
             <?php get_header(); ?>
             <main class="main container">
                 <h1 class="page__title">
                     <?php the_title(); ?>
                 </h1>
+
                 <div class="articles__box-1">
+
                     <?php
                     $posts_per_page = 5; // number of posts to show per page
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // get current page number
@@ -132,12 +134,14 @@ Template Name: articles
                         // your custom post type
                         'posts_per_page' => $posts_per_page,
                         'paged' => $paged,
+
                         'meta_query' => array(
                             array(
                                 'key' => '_wp_page_template',
                                 'value' => 'pages/article.php', // template name as stored in the dB
                             )
                         )
+
                     );
                     $loop = new WP_Query($args);
                     if ($loop->have_posts()) {
@@ -146,6 +150,7 @@ Template Name: articles
                             // get ACF fields
                             $post_id = get_the_ID(); // get the ID of the current post
                             $post_url = get_permalink($post_id); // get the URL of the current post
+
                             $name = get_field('articles_title');
                             $description = get_field('articles_description');
                             $picture = get_field('articles_image');
@@ -157,6 +162,7 @@ Template Name: articles
                             echo '<h2 class="articles__item-name">' . $name . '</h2>';
                             echo '<p class="articles__item-description">' . $description . '</p>';
                             echo '<a href="' . esc_url($post_url) . '" class="articles__item-button button button_read-more">Читать далее</a>';
+
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
@@ -169,7 +175,9 @@ Template Name: articles
                             echo paginate_links(
                                 array(
                                     'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+
                                     'format' => 'articles/page/%#%',
+
                                     'current' => $current_page,
                                     'total' => $total_pages,
                                     'prev_text' => '&laquo;',

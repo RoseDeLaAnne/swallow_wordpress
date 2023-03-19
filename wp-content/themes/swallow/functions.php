@@ -17,6 +17,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('blocks-index', get_template_directory_uri() . '/css/blocks/index.css');
     wp_enqueue_style('blocks-logo', get_template_directory_uri() . '/css/blocks/logo.css');
     wp_enqueue_style('blocks-button', get_template_directory_uri() . '/css/blocks/button.css');
+    wp_enqueue_style('blocks-donate', get_template_directory_uri() . '/css/blocks/donate.css');
     wp_enqueue_style('blocks-ready-to-help', get_template_directory_uri() . '/css/blocks/ready-to-help.css');
     wp_enqueue_style('blocks-pagination', get_template_directory_uri() . '/css/blocks/pagination.css');
     wp_enqueue_style('blocks-partners', get_template_directory_uri() . '/css/blocks/partners.css');

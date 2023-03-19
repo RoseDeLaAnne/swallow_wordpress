@@ -1,0 +1,72 @@
+.donate {
+    display: flex;
+    flex-direction: column;
+}
+
+.donate__title {
+    margin-bottom: 64px;
+
+    font-size: 80px;
+
+    letter-spacing: .05em;
+
+    color: #fff;
+}
+
+.donate-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.donate-form input {
+    margin-bottom: 32px;
+
+    font-size: 32px;
+    
+    color: #fff;
+
+    border-bottom: 1px solid #fff;
+}
+
+.donate-form label {
+    margin-top: 32px;
+
+    font-size: 24px;
+
+    color: #fff;
+}
+
+.donate-form__agree-with-terms {
+    display: flex;
+
+    align-items: center;
+
+    column-gap: 16px;
+}
+
+.donate-form__agree-with-terms .custom-checkbox {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff;
+
+    border-radius: 8px;
+}
+
+.custom-checkbox__icon {
+    width: 32px;
+    height: 32px;
+}
+
+.donate-form__agree-with-terms-span {
+    display: flex;
+}
+
+.donate-form__agree-with-terms-span a {
+    margin-left: 8px;
+}
