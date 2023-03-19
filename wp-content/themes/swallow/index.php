@@ -38,11 +38,11 @@
                 <div class="donate">
                     <h1 class="donate__title">Пожертвовать</h1>
                     <form class="donate-form">
-                        <input type="text" class="donate-form__name" placeholder="Ваше имя (обязательно)">
-                        <input type="text" class="donate-form__email" placeholder="E-mail (обязательно)">
-                        <input type="text" class="donate-form__phone-number" placeholder="Телефон">
-
-                        <input type="text" class="donate-form__sum" placeholder="Сумма (обязательно)">
+                        <input type="text" name="username" class="donate-form__name" placeholder="Ваше имя (обязательно)">
+                        <input type="text" name="email" class="donate-form__email" placeholder="E-mail (обязательно)">
+                        <input type="text" name="phone" class="donate-form__phone-number" placeholder="Телефон">
+                        <input type="text" name="sum" class="donate-form__sum" placeholder="Сумма (обязательно)">
+                      
 
                         <!-- <label class="donate-form__agree-with-terms">
                             <span class="custom-checkbox">
