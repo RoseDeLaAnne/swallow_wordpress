@@ -16,6 +16,20 @@
     background-color: #f77f00;
 }
 
+.button.button_floating-ready-to-help {
+    position: fixed;
+
+    right: 16px;
+    bottom: 16px;
+
+    width: 80px;
+    height: 80px;
+
+    background-color: #f77f00;
+
+    animation: readyToHelp 5s ease-in-out infinite alternate;
+}
+
 .button.button_ready-to-help:hover {
     color: #f77f00;
     background-color: #fff;
@@ -38,4 +52,16 @@
 
 .button.button_read-more:hover {
     opacity: 0.5;
+}
+
+.button.button_donate {
+    margin-top: 48px;
+    padding: 16px 48px;
+
+    font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1920 - 320));
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    background-color: #f77f00;
+    color: #fff;
 }

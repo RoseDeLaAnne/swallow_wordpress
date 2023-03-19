@@ -8,7 +8,7 @@
 
     <?php wp_head(); ?>
 
-    <title>Index</title>
+    <title>АНО «Сообщество замещающих семей "Ласточка"»</title>
 
     <style>
         .splash {
@@ -22,8 +22,49 @@
 
 <body>
     <div class="page">
-        <div class="modal">
-            <button class="modal__close-button">
+        <button class="button button_floating-ready-to-help"></button>
+
+        <div class="modal modal_donate">
+            <button class="modal__close-button modal__close-button_donate">
+                <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 24 24"
+                    class="modal__close-button-icon">
+                    <path fill="#fff" fill-rule="evenodd"
+                        d="M19.207 6.207a1 1 0 0 0-1.414-1.414L12 10.586 6.207 4.793a1 1 0 0 0-1.414 1.414L10.586 12l-5.793 5.793a1 1 0 1 0 1.414 1.414L12 13.414l5.793 5.793a1 1 0 0 0 1.414-1.414L13.414 12l5.793-5.793z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+
+            <div class="modal__inner">
+                <div class="donate">
+                    <h1 class="donate__title">Пожертвовать</h1>
+                    <form class="donate-form">
+                        <input type="text" class="donate-form__name" placeholder="Ваше имя (обязательно)">
+                        <input type="text" class="donate-form__email" placeholder="E-mail (обязательно)">
+                        <input type="text" class="donate-form__phone-number" placeholder="Телефон">
+
+                        <input type="text" class="donate-form__sum" placeholder="Сумма (обязательно)">
+
+                        <!-- <label class="donate-form__agree-with-terms">
+                            <span class="custom-checkbox">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" fill="none"
+                                    viewBox="0 0 24 24" class="custom-checkbox__icon">
+                                    <path fill="#000" fill-rule="evenodd"
+                                        d="M20.61 5.207a1 1 0 0 1 .183 1.403l-10 13a1 1 0 0 1-1.5.097l-5-5a1 1 0 0 1 1.414-1.414l4.195 4.195L19.207 5.39a1 1 0 0 1 1.403-.183Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <span class="donate-form__agree-with-terms-span">Согласен с условиями <a
+                                    href="#">оферты</a></span>
+                        </label> -->
+
+                        <button class="button button_donate">Помочь детям</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal_nav">
+            <button class="modal__close-button modal__close-button_nav">
                 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 24 24"
                     class="modal__close-button-icon">
                     <path fill="#fff" fill-rule="evenodd"
