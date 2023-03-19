@@ -120,7 +120,7 @@
 }
 
 .nav-dropdown__item-link {
-    font-size: calc(12px + (18 - 12) * (100vw - 320px) / (1920 - 320));
+    font-size: calc(12px + (16 - 12) * (100vw - 320px) / (1920 - 320));
 
     text-transform: uppercase;
     letter-spacing: 0.1em;

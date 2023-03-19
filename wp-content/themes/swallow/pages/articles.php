@@ -123,108 +123,77 @@ Template Name: articles
                 <h1 class="page__title">
                     <?php the_title(); ?>
                 </h1>
+                <?php
+                $posts_per_page = 1; // number of posts to show per page
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // get current page number
+                $args = array(
+                    'post_type' => 'post',
+                    // your custom post type
+                    'posts_per_page' => $posts_per_page,
+                    'paged' => $paged,
 
-                <div class="articles__box-1">
-
-                    <?php
-                    $posts_per_page = 5; // number of posts to show per page
-                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // get current page number
-                    $args = array(
-                        'post_type' => 'post',
-                        // your custom post type
-                        'posts_per_page' => $posts_per_page,
-                        'paged' => $paged,
-
-                        'meta_query' => array(
-                            array(
-                                'key' => '_wp_page_template',
-                                'value' => 'pages/article.php', // template name as stored in the dB
-                            )
+                    'meta_query' => array(
+                        array(
+                            'key' => '_wp_page_template',
+                            'value' => 'pages/article.php',
+                            // template name as stored in the dB
                         )
+                    )
 
-                    );
-                    $loop = new WP_Query($args);
-                    if ($loop->have_posts()) {
-                        while ($loop->have_posts()) {
-                            $loop->the_post();
-                            // get ACF fields
-                            $post_id = get_the_ID(); // get the ID of the current post
-                            $post_url = get_permalink($post_id); // get the URL of the current post
+                );
+                $loop = new WP_Query($args);
+                if ($loop->have_posts()) {
+                    while ($loop->have_posts()) {
+                        $loop->the_post();
+                        // get ACF fields
+                        $post_id = get_the_ID(); // get the ID of the current post
+                        $post_url = get_permalink($post_id); // get the URL of the current post
+                
+                        $name = get_field('title');
+                        $description = get_field('description');
+                        $picture = get_field('image');
 
-                            $name = get_field('articles_title');
-                            $description = get_field('articles_description');
-                            $picture = get_field('articles_image');
-                            // output the fields
-                            echo '<div class="articles__item">';
-                            echo '<img class="articles__item-image" src="' . $picture . '" alt="' . $name . '">';
-                            echo '<div class="articles__item-box-1">';
-                            echo '<div class="articles__item-box-11">';
-                            echo '<h2 class="articles__item-name">' . $name . '</h2>';
-                            echo '<p class="articles__item-description">' . $description . '</p>';
-                            echo '<a href="' . esc_url($post_url) . '" class="articles__item-button button button_read-more">Читать далее</a>';
-
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                        }
-                        // add pagination links
-                        $total_pages = $loop->max_num_pages;
-                        if ($total_pages > 1) {
-                            $current_page = max(1, get_query_var('paged'));
-                            echo '<div class="pagination">';
-                            echo paginate_links(
-                                array(
-                                    'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-
-                                    'format' => 'articles/page/%#%',
-
-                                    'current' => $current_page,
-                                    'total' => $total_pages,
-                                    'prev_text' => '&laquo;',
-                                    'next_text' => '&raquo;',
-                                )
-                            );
-                            echo '</div>';
-                        }
-                        wp_reset_postdata(); // reset the query
-                    } else {
-                        echo '<p>No posts found</p>';
+                        // output the fields
+                        echo '<div class="articles__box-1">';
+                        echo '<div class="articles__item">';
+                        echo '<a href="' . esc_url($post_url) . '">';
+                        echo '<img class="articles__item-image" src="' . $picture . '" alt="' . $name . '">';
+                        echo '</a>';
+                        echo '<div class="articles__item-box-1">';
+                        echo '<div class="articles__item-box-11">';
+                        echo '<h2 class="articles__item-name">' . $name . '</h2>';
+                        echo '<p class="articles__item-description">' . $description . '</p>';
+                        echo '<a href="' . esc_url($post_url) . '" class="articles__item-button button button_read-more">Читать далее</a>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
                     }
-                    ?>
-                </div>
-
-                <nav class="page-navigation">
-                    <ul class="pagination">
-                        <li class="pagination__item">
-                            <a class="pagination__link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="pagination__item"><a class="pagination__link" href="?page=1">1</a></li>
-                        <li class="pagination__item"><a class="pagination__link" href="?page=2">2</a></li>
-                        <li class="pagination__item"><a class="pagination__link" href="?page=3">3</a></li>
-                        <li class="pagination__item">
-                            <a class="pagination__link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                    // add pagination links
+                    $total_pages = $loop->max_num_pages;
+                    if ($total_pages > 1) {
+                        $current_page = max(1, get_query_var('paged'));
+                        echo '<div class="pagination">';
+                        echo paginate_links(
+                            array(
+                                'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+                                'format' => 'page/%#%',
+                                'current' => $current_page,
+                                'total' => $total_pages,
+                                'prev_text' => '&laquo;',
+                                'next_text' => '&raquo;',
+                            )
+                        );
+                        echo '</div>';
+                    }
+                    wp_reset_postdata(); // reset the query
+                } else {
+                    echo '<p>Статьи не найдены</p>';
+                }
+                ?>
             </main>
         </div>
         <?php get_footer(); ?>
-
-        <!-- <div class="news__item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index__splash.jpg" alt=""
-                            class="news__item-img" />
-                        <div class="news__item-box-1">
-                            <div class="news__item-box-11">
-                                <h2 class="news__item-name">Название новости</h2>
-                                <p class="news__item-description">Краткое описание новости</p>
-                            </div>
-                            <a href="#" class="news__item-button button button_read-more">Читать далее</a>
-                        </div>
-                    </div> -->
 </body>
 
 </html>

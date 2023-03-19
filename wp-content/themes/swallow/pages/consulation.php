@@ -1,7 +1,6 @@
 <?php
 /*
-Template Name: single-news
-Template Post Type: post, pages
+Template Name: consultation
 */
 ?>
 <!DOCTYPE html>
@@ -24,15 +23,7 @@ Template Post Type: post, pages
         <div class="page__box-1">
             <?php get_header(); ?>
             <main class="main container">
-                <div class="single-news">
-                    <h1 class="single-news__name">
-                        <?php the_title(); ?>
-                    </h1>
-                    <img class="single-news__image" src="<?php the_field('image'); ?>" alt="">
-                    <p class="single-news__description">
-                        <?php the_content(); ?>
-                    </p>
-                </div>
+                
             </main>
         </div>
         <?php get_footer(); ?>

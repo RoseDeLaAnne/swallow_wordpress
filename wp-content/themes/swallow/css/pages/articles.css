@@ -62,6 +62,10 @@
     }
 }
 
+.articles__item-description {
+    font-size: 18px;
+}
+
 .articles__item-button {
     margin-top: 16px;
 
