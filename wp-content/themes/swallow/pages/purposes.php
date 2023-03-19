@@ -1,8 +1,6 @@
 <?php
 /*
-Template Name: type5
-
-Template Post Type: post, pages
+Template Name: purposes
 */
 ?>
 <!DOCTYPE html>
@@ -25,17 +23,20 @@ Template Post Type: post, pages
         <div class="page__box-1">
             <?php get_header(); ?>
             <main class="main container">
-                <div class="purposes">
-                    <h1 class="articles__title">
-                        <?php the_field('news_title') ?>
+                <div class="tasks">
+                    <h1 class="h1">
+                        <?php the_title(); ?>
                     </h1>
-                    <div class="community__box-1">
-                        <p>
-                            <?php the_field('news_description'); ?>
-                        </p>
-
-                        <img class="news__item-image" src="<?php the_field('news_image'); ?>" alt="">;
-                    </div>
+                    <?php the_content(); ?>
+                    <!-- <div class="tasks__box-1">
+                        <ul>
+                            <li>
+                                <p class="tasks__item-text">
+                                    Список 1
+                                </p>
+                            </li>
+                        </ul>
+                    </div> -->
                 </div>
             </main>
         </div>

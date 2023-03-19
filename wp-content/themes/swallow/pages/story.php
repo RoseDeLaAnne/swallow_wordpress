@@ -1,6 +1,8 @@
 <?php
 /*
-Template Name: type1
+Template Name: story
+
+Template Post Type: post, pages
 */
 ?>
 <!DOCTYPE html>
@@ -23,20 +25,17 @@ Template Name: type1
         <div class="page__box-1">
             <?php get_header(); ?>
             <main class="main container">
-                <div class="tasks">
-                    <h1 class="h1">
-                        <?php the_title(); ?>
+                <div class="purposes">
+                    <h1 class="stories__title">
+                        <?php the_field('stories_title') ?>
                     </h1>
-                    <?php the_content(); ?>
-                    <!-- <div class="tasks__box-1">
-                        <ul>
-                            <li>
-                                <p class="tasks__item-text">
-                                    Список 1
-                                </p>
-                            </li>
-                        </ul>
-                    </div> -->
+                    <div class="community__box-1">
+                        <p>
+                            <?php the_field('stories_description'); ?>
+                        </p>
+
+                        <img class="stories__item-image" src="<?php the_field('stories_image'); ?>" alt="">;
+                    </div>
                 </div>
             </main>
         </div>

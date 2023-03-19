@@ -25,6 +25,8 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('index', get_template_directory_uri() . '/css/pages/index.css');
     wp_enqueue_style('literature', get_template_directory_uri() . '/css/pages/literature.css');
     wp_enqueue_style('news', get_template_directory_uri() . '/css/pages/news.css');
+    wp_enqueue_style('articles', get_template_directory_uri() . '/css/pages/articles.css');
+    wp_enqueue_style('articles', get_template_directory_uri() . '/css/pages/stories.css');
 
     wp_enqueue_script('modal', get_template_directory_uri() . '/js/modal.js', array('jquery'), '1.0.0', false);
 })
