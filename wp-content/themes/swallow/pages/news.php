@@ -132,6 +132,14 @@ Template Name: news
                         // your custom post type
                         'posts_per_page' => $posts_per_page,
                         'paged' => $paged,
+
+                        'meta_query' => array(
+                            array(
+                                'key' => '_wp_page_template',
+                                'value' => 'pages/single-news.php', // template name as stored in the dB
+                            )
+                        )
+
                     );
                     $loop = new WP_Query($args);
                     if ($loop->have_posts()) {
@@ -140,9 +148,12 @@ Template Name: news
                             // get ACF fields
                             $post_id = get_the_ID(); // get the ID of the current post
                             $post_url = get_permalink($post_id); // get the URL of the current post
-                            $name = get_field('title');
-                            $description = get_field('description');
-                            $picture = get_field('image');
+
+                            $name = get_field('news_title');
+                            $description = get_field('news_description');
+                            $picture = get_field('news_image');
+
+
                             // output the fields
                             echo '<div class="news__item">';
                             echo '<img class="news__item-image" src="' . $picture . '" alt="' . $name . '">';

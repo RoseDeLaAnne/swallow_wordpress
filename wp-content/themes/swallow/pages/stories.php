@@ -1,7 +1,6 @@
 <?php
 /*
-Template Name: type3
-Template Post Type: post, pages
+Template Name: stories
 */
 ?>
 <!DOCTYPE html>
@@ -124,7 +123,7 @@ Template Post Type: post, pages
                 <h1 class="page__title">
                     <?php the_title(); ?>
                 </h1>
-                <div class="news__box-1">
+                <div class="stories__box-1">
                     <?php
                     $posts_per_page = 5; // number of posts to show per page
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // get current page number
@@ -141,17 +140,17 @@ Template Post Type: post, pages
                             // get ACF fields
                             $post_id = get_the_ID(); // get the ID of the current post
                             $post_url = get_permalink($post_id); // get the URL of the current post
-                            $name = get_field('news_title');
-                            $description = get_field('news_description');
-                            $picture = get_field('news_image');
+                            $name = get_field('story_title');
+                            $description = get_field('story_description');
+                            $picture = get_field('story_image');
                             // output the fields
-                            echo '<div class="news__item">';
-                            echo '<img class="news__item-image" src="' . $picture . '" alt="' . $name . '">';
-                            echo '<div class="news__item-box-1">';
-                            echo '<div class="news__item-box-11">';
-                            echo '<h2 class="news__item-name">' . $name . '</h2>';
-                            echo '<p class="news__item-description">' . $description . '</p>';
-                            echo '<a href="' . esc_url($post_url) . '" class="news__item-button button button_read-more">Читать далее</a>';
+                            echo '<div class="stories__item">';
+                            echo '<img class="stories__item-image" src="' . $picture . '" alt="' . $name . '">';
+                            echo '<div class="stories__item-box-1">';
+                            echo '<div class="stories__item-box-11">';
+                            echo '<h2 class="stories__item-name">' . $name . '</h2>';
+                            echo '<p class="stories__item-description">' . $description . '</p>';
+                            echo '<a href="' . esc_url($post_url) . '" class="stories__item-button button button_read-more">Читать далее</a>';
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
@@ -164,7 +163,7 @@ Template Post Type: post, pages
                             echo paginate_links(
                                 array(
                                     'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-                                    'format' => 'news/page/%#%',
+                                    'format' => 'stories/page/%#%',
                                     'current' => $current_page,
                                     'total' => $total_pages,
                                     'prev_text' => '&laquo;',
@@ -201,15 +200,15 @@ Template Post Type: post, pages
         </div>
         <?php get_footer(); ?>
 
-        <!-- <div class="news__item">
+        <!-- <div class="stories__item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/index__splash.jpg" alt=""
-                            class="news__item-img" />
-                        <div class="news__item-box-1">
-                            <div class="news__item-box-11">
-                                <h2 class="news__item-name">Название новости</h2>
-                                <p class="news__item-description">Краткое описание новости</p>
+                            class="stories__item-img" />
+                        <div class="stories__item-box-1">
+                            <div class="stories__item-box-11">
+                                <h2 class="stories__item-name">Название новости</h2>
+                                <p class="stories__item-description">Краткое описание новости</p>
                             </div>
-                            <a href="#" class="news__item-button button button_read-more">Читать далее</a>
+                            <a href="#" class="stories__item-button button button_read-more">Читать далее</a>
                         </div>
                     </div> -->
 </body>
