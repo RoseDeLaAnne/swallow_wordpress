@@ -3,6 +3,13 @@
         <a href="index" class="logo">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/logo.svg" alt="" class="logo__img" />
         </a>
+        <button class="header__menu-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 24 24"
+                class="header__menu-button-icon">
+                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M4 17h16M4 12h16M4 7h16" />
+            </svg>
+        </button>
         <nav class="nav nav_header">
             <ul class="nav__box-1">
                 <li class="nav__item">

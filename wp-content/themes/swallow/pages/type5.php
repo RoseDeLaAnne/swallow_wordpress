@@ -27,12 +27,14 @@ Template Post Type: post, pages
             <main class="main container">
                 <div class="purposes">
                     <h1 class="articles__title">
-                        <?php the_field('news_title'); ?>
+                        <?php the_field('news_title') ?>
                     </h1>
                     <div class="community__box-1">
                         <p>
-                            Текст статьи или новости
+                            <?php the_field('news_description'); ?>
                         </p>
+
+                        <img class="news__item-image" src="<?php the_field('news_image'); ?>" alt="">;
                     </div>
                 </div>
             </main>

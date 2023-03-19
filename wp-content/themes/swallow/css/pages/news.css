@@ -16,7 +16,7 @@
     }
 }
 
-.news__item-img {
+.news__item-image {
     margin-bottom: calc(16px + (24 - 16) * (100vw - 320px) / (1920 - 320));
 
     width: 100%;
@@ -29,12 +29,12 @@
     cursor: pointer;
 }
 
-.news__item-img:hover {
+.news__item-image:hover {
     transform: scale(1.05);
 }
 
 @media (max-width: 576px) {
-    .news__item-img {
+    .news__item-image {
         height: 256px;
     }
 }
