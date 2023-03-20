@@ -135,7 +135,7 @@ Template Name: news
                     'meta_query' => array(
                         array(
                             'key' => '_wp_page_template',
-                            'value' => 'pages/singleNews.php',
+                            'value' => 'pages/single-news.php',
                             // template name as stored in the dB
                         )
                     )
@@ -149,9 +149,9 @@ Template Name: news
                         $post_id = get_the_ID(); // get the ID of the current post
                         $post_url = get_permalink($post_id); // get the URL of the current post
                 
-                        $name = get_field('title');
-                        $description = get_field('description');
-                        $picture = get_field('image');
+                        $name = get_field('news_title');
+                        $description = get_field('news_description');
+                        $picture = get_field('news_image');
 
                         // output the fields
                         echo '<div class="news__box-1">';

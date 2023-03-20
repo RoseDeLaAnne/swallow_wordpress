@@ -27,11 +27,11 @@ Template Post Type: post, pages
             <main class="main container">
                 <div class="article">
                     <h1 class="article__name">
-                        <?php the_field('name') ?>
+                        <?php the_field('articles_title') ?>
                     </h1>
-                    <img class="article__image" src="<?php the_field('image'); ?>" alt="">
+                    <img class="article__image" src="<?php the_field('articles_image'); ?>" alt="">
                     <p class="article__description">
-                        <?php the_field('description'); ?>
+                        <?php the_field('articles_description'); ?>
                     </p>
                 </div>
             </main>

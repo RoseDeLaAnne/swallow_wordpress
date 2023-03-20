@@ -1,6 +1,7 @@
 <?php
 /*
 Template Name: single-news
+
 Template Post Type: post, pages
 */
 ?>
@@ -28,7 +29,7 @@ Template Post Type: post, pages
                     <h1 class="single-news__name">
                         <?php the_title(); ?>
                     </h1>
-                    <img class="single-news__image" src="<?php the_field('image'); ?>" alt="">
+                    <img class="single-news__image" src="<?php the_field('news_image'); ?>" alt="">
                     <p class="single-news__description">
                         <?php the_content(); ?>
                     </p>

@@ -149,9 +149,9 @@ Template Name: articles
                         $post_id = get_the_ID(); // get the ID of the current post
                         $post_url = get_permalink($post_id); // get the URL of the current post
                 
-                        $name = get_field('title');
-                        $description = get_field('description');
-                        $picture = get_field('image');
+                        $name = get_field('articles_title');
+                        $description = get_field('articles_description');
+                        $picture = get_field('articles_image');
 
                         // output the fields
                         echo '<div class="articles__box-1">';
