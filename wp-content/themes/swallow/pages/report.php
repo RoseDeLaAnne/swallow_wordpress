@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: ystav-doc
+Template Name: report
 Template Post Type: post, pages
 */
 ?>
@@ -26,7 +26,7 @@ Template Post Type: post, pages
             <main class="main container">
                 <div class="purposes">
                     <div class="community__box-1">
-                        <p><a href="<?php the_field('ystav_link'); ?>" target="_blank"> "<?php the_field('ystav_title'); ?>"</a></p>
+                        <p><a href="<?php the_field('report_link'); ?>" target="_blank"> "<?php the_field('report_title'); ?>"</a></p>
 
                     </div>
                 </div>
