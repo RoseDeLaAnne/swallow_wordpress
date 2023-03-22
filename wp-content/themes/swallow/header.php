@@ -34,9 +34,6 @@
                             <a href="reports" class="nav-dropdown__item-link">Отчеты</a>
                         </li>
                         <li class="nav-dropdown__item">
-                            <a href="contacts" class="nav-dropdown__item-link">Контакты</a>
-                        </li>
-                        <li class="nav-dropdown__item">
                             <a href="partners" class="nav-dropdown__item-link">Партнёры</a>
                         </li>
                     </ul>
@@ -86,7 +83,7 @@
                     </ul>
                 </li>
                 <li class="nav__item">
-                    <a href="employee-offers" class="nav__item-link">Предложения о сотрудниках</a>
+                    <a href="cooperation-proposal" class="nav__item-link">Предложения о сотрудничестве</a>
                 </li>
             </ul>
         </nav>

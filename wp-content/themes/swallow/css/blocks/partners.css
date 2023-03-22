@@ -2,11 +2,29 @@
     margin-top: 32px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     gap: 64px;
 }
 
 .partners__item {
     display: flex;
+}
+
+.partners__item-link {
+    width: 100%;
+    height: 256px;
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    border-radius: 16px;
+}
+
+.partners__item-image {
+    width: 100%;
+    height: 256px;
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    border-radius: 16px;
 }
