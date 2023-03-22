@@ -40,8 +40,8 @@
     visibility: hidden;
     opacity: 0;
 
-    transition: transform 5s ease-in-out, visibility 5s ease-in-out,
-        opacity 5s ease-in-out;
+    transition: transform 2.5s ease-in-out, visibility 2.5s ease-in-out,
+        opacity 2.5s ease-in-out;
 }
 
 .nav.nav_header .nav__item:hover > .nav-dropdown {

@@ -15,7 +15,7 @@
                     <a href="club" class="nav__item-link">Программы и проекты</a>
                 </li>
                 <li class="nav__item">
-                    <a href="employee-offers" class="nav__item-link">Предложения о сотрудниках</a>
+                    <a href="cooperation-proposal" class="nav__item-link">Предложения о сотрудничестве</a>
                 </li>
             </ul>
         </nav>
@@ -26,7 +26,7 @@
     <div class="footer__box-2 container">
         <div class="footer__box-21">
             <div class="footer__box-211">
-                <p class="footer__text">Благотварительный фонд «ЛАСТОЧКА»</p>
+                <p class="footer__text">АНО СЗС «ЛАСТОЧКА»</p>
             </div>
             <div class="footer__box-211">
                 <p class="footer__text">ИНН/КПП: 7707083893/213001001</p>
@@ -48,7 +48,7 @@
                 организации регистрационный №1222100009702 учетный №2114050219
             </p>
             <p class="footer__text">
-                Все права защищены и охраняются законом. © Благотворительный фонд
+                Все права защищены и охраняются законом. © АНО СЗС
                 «ЛАСТОЧКА»
             </p>
         </div>
