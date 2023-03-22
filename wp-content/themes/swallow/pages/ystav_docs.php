@@ -153,7 +153,7 @@ Template Name: ystav-docs
                             // output the fields
                             echo '<ol class="articles__item">';
                             echo '<li>';
-                            echo '<a href="'. $link .'">' . $name .'</a>';
+                            echo '<a href="'. $link .'" " target="_blank">' . $name .'</a>';
                             echo '</li>';
                             echo '</ol>';
         
