@@ -1,6 +1,15 @@
 .donate {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 64px;
+}
+
+.donate__box-1 {
     display: flex;
     flex-direction: column;
+
+    align-items: center;
 }
 
 .donate__title {
@@ -69,4 +78,10 @@
 
 .donate-form__agree-with-terms-span a {
     margin-left: 8px;
+}
+
+.donate__text {
+    text-align: center;
+
+    color: #fff;
 }
