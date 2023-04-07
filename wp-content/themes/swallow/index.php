@@ -87,9 +87,30 @@
                         </label> -->
 
                             <select class="select">
-                                <option value="reason-1">Reason 1</option>
-                                <option value="reason-2">Reason 2</option>
-                                <option value="reason-3">Reason 3</option>
+                                <?php
+                                 $args = array(
+                                    'post_type' => 'post',
+                                    // your custom post type
+                                    'meta_query' => array(
+                                        array(
+                                            'key' => '_wp_page_template',
+                                            'value' => 'pages/reason.php',
+                                            // template name as stored in the dB
+                                        )
+                                    )
+            
+                                );
+                                $loop = new WP_Query($args);
+                                if ($loop->have_posts()) {
+                                    while ($loop->have_posts()) {
+                                        $loop->the_post();
+                                        // get ACF fields
+                                        $name = get_field('reason_title');
+                                        // output the fields
+                                        echo '<option value="' . $name . '">' . $name . '</option>';
+                                    }
+                                }
+                                ?>
                             </select>
 
                             <button class="button button_donate">Помочь детям</button>
