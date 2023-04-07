@@ -32,6 +32,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('single-news', get_template_directory_uri() . '/css/pages/single-news.css');
     wp_enqueue_style('stories', get_template_directory_uri() . '/css/pages/stories.css');
     wp_enqueue_style('story', get_template_directory_uri() . '/css/pages/story.css');
+    wp_enqueue_style('workers', get_template_directory_uri() . '/css/pages/workers.css');
 
     wp_enqueue_script('modal', get_template_directory_uri() . '/js/modal.js', array('jquery'), '1.0.0', false);
 })
