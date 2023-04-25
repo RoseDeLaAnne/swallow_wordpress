@@ -119,6 +119,7 @@ Template Name: news
                 <h1 class="page__title">
                     <?php the_title(); ?>
                 </h1>
+                <div class="news__box-1">
                 <?php
                 $posts_per_page = 15; // number of posts to show per page
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // get current page number
@@ -150,7 +151,6 @@ Template Name: news
                         $picture = get_field('news_image');
 
                         // output the fields
-                        echo '<div class="news__box-1">';
                         echo '<div class="news__item">';
                         echo '<a href="' . esc_url($post_url) . '">';
                         echo '<img class="news__item-image" src="' . $picture . '" alt="' . $name . '">';
@@ -163,8 +163,33 @@ Template Name: news
                         echo '</div>';
                         echo '</div>';
                         echo '</div>';
-                        echo '</div>';
                     }
+                    wp_reset_postdata(); // reset the query
+                } else {
+                    echo '<p>Новости не найдены</p>';
+                }
+                ?>
+                </div>
+                <?php
+                $posts_per_page = 15; // number of posts to show per page
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // get current page number
+                $args = array(
+                    'post_type' => 'post',
+                    // your custom post type
+                    'posts_per_page' => $posts_per_page,
+                    'paged' => $paged,
+
+                    'meta_query' => array(
+                        array(
+                            'key' => '_wp_page_template',
+                            'value' => 'pages/single-news.php',
+                            // template name as stored in the dB
+                        )
+                    )
+
+                );
+                $loop = new WP_Query($args);
+                if ($loop->have_posts()) {
                     // add pagination links
                     $total_pages = $loop->max_num_pages;
                     if ($total_pages > 1) {
@@ -183,10 +208,8 @@ Template Name: news
                         echo '</div>';
                     }
                     wp_reset_postdata(); // reset the query
-                } else {
-                    echo '<p>Новости не найдены</p>';
                 }
-                ?>
+                ?>                
             </main>
         </div>
         <?php get_footer(); ?>

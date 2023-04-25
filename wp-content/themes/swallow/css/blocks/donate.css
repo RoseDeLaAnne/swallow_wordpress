@@ -12,10 +12,52 @@
     align-items: center;
 }
 
+.donate__box-for-banks {
+    display: none;
+
+    column-gap: 32px;
+}
+
+@media (max-width: 1600px) {
+    #donate-alpha {
+        display: none;
+    }
+
+    #donate-sber {
+        display: none;
+    }
+
+    .donate__box-for-banks {
+        display: flex;
+
+        row-gap: 24px;
+    }
+
+    .donate {
+        margin-bottom: 32px;
+
+        grid-template-columns: 1fr;
+
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+    }
+
+    .donate::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .donate__box-for-banks {
+        flex-direction: column;
+    }
+}
+
 .donate__title {
     margin-bottom: 64px;
 
-    font-size: 80px;
+    font-size: calc(32px + (80 - 32) * (100vw - 320px) / (1920 - 320));
 
     letter-spacing: .05em;
 
@@ -30,7 +72,7 @@
 .donate-form input {
     margin-bottom: 32px;
 
-    font-size: 32px;
+    font-size: calc(24px + (32 - 24) * (100vw - 320px) / (1920 - 320));
     
     color: #fff;
 
@@ -84,4 +126,8 @@
     text-align: center;
 
     color: #fff;
+}
+
+.donate-form select {
+    font-size: calc(24px + (32 - 24) * (100vw - 320px) / (1920 - 320));
 }

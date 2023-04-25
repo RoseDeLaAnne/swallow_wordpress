@@ -118,6 +118,7 @@ Template Name: stories
                 <h1 class="page__title">
                     <?php the_title(); ?>
                 </h1>
+                <div class="stories__box-1">
                 <?php
                 $posts_per_page = 15; // number of posts to show per page
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // get current page number
@@ -149,7 +150,6 @@ Template Name: stories
                         $picture = get_field('image');
 
                         // output the fields
-                        echo '<div class="stories__box-1">';
                         echo '<div class="stories__item">';
                         echo '<a href="' . esc_url($post_url) . '">';
                         echo '<img class="stories__item-image" src="' . $picture . '" alt="' . $name . '">';
@@ -162,8 +162,33 @@ Template Name: stories
                         echo '</div>';
                         echo '</div>';
                         echo '</div>';
-                        echo '</div>';
                     }
+                    wp_reset_postdata(); // reset the query
+                } else {
+                    echo '<p>Истории не найдены</p>';
+                }
+                ?>
+                </div>
+                <?php
+                $posts_per_page = 15; // number of posts to show per page
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // get current page number
+                $args = array(
+                    'post_type' => 'post',
+                    // your custom post type
+                    'posts_per_page' => $posts_per_page,
+                    'paged' => $paged,
+
+                    'meta_query' => array(
+                        array(
+                            'key' => '_wp_page_template',
+                            'value' => 'pages/story.php',
+                            // template name as stored in the dB
+                        )
+                    )
+
+                );
+                $loop = new WP_Query($args);
+                if ($loop->have_posts()) {
                     // add pagination links
                     $total_pages = $loop->max_num_pages;
                     if ($total_pages > 1) {
@@ -182,8 +207,6 @@ Template Name: stories
                         echo '</div>';
                     }
                     wp_reset_postdata(); // reset the query
-                } else {
-                    echo '<p>Истории не найдены</p>';
                 }
                 ?>
             </main>

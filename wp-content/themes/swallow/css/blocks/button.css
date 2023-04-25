@@ -65,3 +65,23 @@
     background-color: #f77f00;
     color: #fff;
 }
+
+.banks-button_adaptive-sber {
+    margin-top: 6px;
+    padding: 16px 32px;
+
+    background-color: #0ed245;
+    color: #fff;
+
+    border-radius: 16px;
+}
+
+.banks-button_adaptive-alpha {
+    margin-top: 6px;
+    padding: 16px 32px;
+
+    background-color: #c43134;
+    color: #fff;
+
+    border-radius: 16px;
+}
