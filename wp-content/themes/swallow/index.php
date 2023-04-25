@@ -24,7 +24,7 @@
     <div class="page">
         <button class="button button_floating-ready-to-help"></button>
 
-        <div class="modal modal_donate modal_active">
+        <div class="modal modal_donate">
             <button class="modal__close-button modal__close-button_donate">
                 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 24 24"
                     class="modal__close-button-icon">
@@ -72,28 +72,628 @@
                             <input type="text" class="donate-form__phone-number" placeholder="Телефон">
 
                             <input type="text" class="donate-form__sum" placeholder="Сумма (обязательно)">
-
-                            <!-- <label class="donate-form__agree-with-terms">
-                            <span class="custom-checkbox">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" fill="none"
-                                    viewBox="0 0 24 24" class="custom-checkbox__icon">
-                                    <path fill="#000" fill-rule="evenodd"
-                                        d="M20.61 5.207a1 1 0 0 1 .183 1.403l-10 13a1 1 0 0 1-1.5.097l-5-5a1 1 0 0 1 1.414-1.414l4.195 4.195L19.207 5.39a1 1 0 0 1 1.403-.183Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </span>
-                            <span class="donate-form__agree-with-terms-span">Согласен с условиями <a
-                                    href="#">оферты</a></span>
-                        </label> -->
-
+                            
                             <select class="select">
-                                <option value="reason-1">Reason 1</option>
-                                <option value="reason-2">Reason 2</option>
-                                <option value="reason-3">Reason 3</option>
+                                <?php
+                                $args = array(
+                                    'post_type' => 'post',
+                                    // your custom post type
+                                    'meta_query' => array(
+                                        array(
+                                            'key' => '_wp_page_template',
+                                            'value' => 'pages/reason.php',
+                                            // template name as stored in the dB
+                                        )
+                                    )
+
+                                );
+                                $loop = new WP_Query($args);
+                                if ($loop->have_posts()) {
+                                    while ($loop->have_posts()) {
+                                        $loop->the_post();
+                                        // get ACF fields
+                                        $name = get_field('reason_title');
+                                        // output the fields
+                                        echo '<option value="' . $name . '">' . $name . '</option>';
+                                    }
+                                }
+                                ?>
                             </select>
 
                             <button class="button button_donate">Помочь детям</button>
                         </form>
+                    </div>
+                    <div class="donate__box-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="984" height="984" viewBox="0 0 984 984" class="qr-code"><rect width="984" height="984" fill="#ffffff" x="0" y="0"/><g fill="#000000">
+<g transform="translate(264,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,48) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,72) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,72) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,72) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,72) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,72) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,72) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,72) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,72) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,72) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,96) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,120) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,144) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,144) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,144) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,144) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,144) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,144) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,144) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,144) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,144) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,168) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,192) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,216) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,216) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,216) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,216) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,216) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,216) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,216) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(96,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,240) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(216,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,264) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(96,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,288) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,312) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,336) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(216,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,360) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(96,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(216,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,384) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(96,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(216,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,408) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(96,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(216,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,432) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,456) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(72,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(96,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,480) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,504) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(216,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,528) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,552) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(72,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(96,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,576) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(216,600) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,600) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,600) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,600) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,600) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,600) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,600) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,600) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,600) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,624) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(72,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(96,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(216,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,648) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,672) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(96,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(168,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,696) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(120,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(144,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(192,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,720) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,744) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(576,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,768) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,792) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(360,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(600,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(792,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,816) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,840) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(432,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,864) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(288,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(624,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(648,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(672,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(696,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(744,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(864,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,888) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(240,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(264,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(312,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(336,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(384,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(408,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(456,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(480,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(504,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(528,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(552,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(720,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(768,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(816,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(840,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(888,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(912,912) scale(4.12)"><rect width="6" height="6"/></g>
+<g transform="translate(48,48)"><g transform="scale(12)"><path d="M0,0v14h14V0H0z M12,12H2V2h10V12z"/></g></g>
+<g transform="translate(768,48)"><g transform="scale(12)"><path d="M0,0v14h14V0H0z M12,12H2V2h10V12z"/></g></g>
+<g transform="translate(48,768)"><g transform="scale(12)"><path d="M0,0v14h14V0H0z M12,12H2V2h10V12z"/></g></g>
+<g transform="translate(96,96)"><g transform="scale(12)"><rect width="6" height="6"/></g></g>
+<g transform="translate(816,96)"><g transform="scale(12)"><rect width="6" height="6"/></g></g>
+<g transform="translate(96,816)"><g transform="scale(12)"><rect width="6" height="6"/></g></g>
+</g></svg>
+                        <p class="donate__text">Если Вы не можете отсканировать QR-код, пожалуйста перейдите по данной ссылке - <a href="https://qr.nspk.ru/BS1A0026DREIOF469P8BNTCDD0LVOE0T?type=01&bank=100000000008&crc=8919">https://qr.nspk.ru/BS1A0026DREIOF469P8BNTCDD0LVOE0T?type=01&bank=100000000008&crc=8919</a></p>
                     </div>
                 </div>
             </div>
@@ -112,85 +712,81 @@
             <div class="modal__inner">
                 <nav class="nav nav_adaptive">
                     <ul class="nav__box-1">
-                        <li class="nav__item">
-                            <a href="about-community" class="nav__item-link">О сообществе</a>
-                            <ul class="nav-dropdown">
-                                <li class="nav-dropdown__item">
-                                    <a href="about-community" class="nav-dropdown__item-link">О сообществе</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="team" class="nav-dropdown__item-link">Команда</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="purposes" class="nav-dropdown__item-link">Цели</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="tasks" class="nav-dropdown__item-link">Задачи</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="statutory-documents" class="nav-dropdown__item-link">Уставные документы</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="reports" class="nav-dropdown__item-link">Отчеты</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="contacts" class="nav-dropdown__item-link">Контакты</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="partners" class="nav-dropdown__item-link">Партнёры</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav__item">
-                            <a href="news" class="nav__item-link">Материалы</a>
-                            <ul class="nav-dropdown">
-                                <li class="nav-dropdown__item">
-                                    <a href="news" class="nav-dropdown__item-link">Новости</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="articles" class="nav-dropdown__item-link">Статьи</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="stories" class="nav-dropdown__item-link">Истории</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="literature" class="nav-dropdown__item-link">Литература</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav__item">
-                            <a href="club" class="nav__item-link">Программы и проекты</a>
-                            <ul class="nav-dropdown">
-                                <li class="nav-dropdown__item">
-                                    <a href="club" class="nav-dropdown__item-link">Клуб приёмных родителей</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="resource-groups" class="nav-dropdown__item-link">Ресурсные кружки "На
-                                        равных"</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="school" class="nav-dropdown__item-link">Школа осознанного родительства</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="post-boarding-support" class="nav-dropdown__item-link">Постинтернатное
-                                        сопровождение</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="sos-help" class="nav-dropdown__item-link">Помощь в тяжелой жизненной
-                                        ситуации</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="consultation" class="nav-dropdown__item-link">Консультация специалистов</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="to-future-parents" class="nav-dropdown__item-link">Будущим приёмным
-                                        родителям</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav__item">
-                            <a href="employee-offers" class="nav__item-link">Предложения о сотрудниках</a>
-                        </li>
+                    <li class="nav__item">
+                    <a href="about-community" class="nav__item-link">О сообществе</a>
+                    <?php
+                    $parent_page_slug = 'about-community'; // Replace with the slug of the parent page
+                    $parent_page = get_page_by_path($parent_page_slug);
+                    $args = array(
+                        'child_of' => $parent_page->ID,
+                        'sort_order' => 'asc',
+                        'sort_column' => 'menu_order',
+                    );
+                    $pages = get_pages($args);
+                    if ($pages) {
+                        echo '<ul class="nav-dropdown">';
+                        foreach ($pages as $page) {
+                            $link = get_page_link($page->ID);
+                            $title = $page->post_title;
+                            echo '<li class="nav-dropdown__item">';
+                            echo '<a href="' . $link . '" class="nav-dropdown__item-link">' . $title . '</a>';
+                            echo '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                    ?>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__item-link">Материалы</a>
+                    <?php
+                    $parent_page_slug = 'materials'; // Replace with the slug of the parent page
+                    $parent_page = get_page_by_path($parent_page_slug);
+                    $args = array(
+                        'child_of' => $parent_page->ID,
+                        'sort_order' => 'asc',
+                        'sort_column' => 'menu_order',
+                    );
+                    $pages = get_pages($args);
+                    if ($pages) {
+                        echo '<ul class="nav-dropdown">';
+                        foreach ($pages as $page) {
+                            $link = get_page_link($page->ID);
+                            $title = $page->post_title;
+                            echo '<li class="nav-dropdown__item">';
+                            echo '<a href="' . $link . '" class="nav-dropdown__item-link">' . $title . '</a>';
+                            echo '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                    ?>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__item-link">Программы и проекты</a>
+                    <?php
+                    $parent_page_slug = 'programs-and-projects'; // Replace with the slug of the parent page
+                    $parent_page = get_page_by_path($parent_page_slug);
+                    $args = array(
+                        'child_of' => $parent_page->ID,
+                        'sort_order' => 'asc',
+                        'sort_column' => 'menu_order',
+                    );
+                    $pages = get_pages($args);
+                    if ($pages) {
+                        echo '<ul class="nav-dropdown">';
+                        foreach ($pages as $page) {
+                            $link = get_page_link($page->ID);
+                            $title = $page->post_title;
+                            echo '<li class="nav-dropdown__item">';
+                            echo '<a href="' . $link . '" class="nav-dropdown__item-link">' . $title . '</a>';
+                            echo '</li>';
+                        }
+                        echo '</ul>';
+                    }
+                    ?>
+                </li>
+                <li class="nav__item">
+                    <a href="cooperation-proposal" class="nav__item-link">Предложения о сотрудничестве</a>
+                </li>
                     </ul>
                 </nav>
             </div>

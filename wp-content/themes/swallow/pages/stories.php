@@ -20,8 +20,8 @@ Template Name: stories
 
 <body>
     <div class="page">
-        <div class="modal">
-            <button class="modal__close-button">
+        <div class="modal modal_nav">
+            <button class="modal__close-button modal__close-button_nav">
                 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 24 24"
                     class="modal__close-button-icon">
                     <path fill="#fff" fill-rule="evenodd"
@@ -35,88 +35,83 @@ Template Name: stories
                     <ul class="nav__box-1">
                         <li class="nav__item">
                             <a href="about-community" class="nav__item-link">О сообществе</a>
-                            <ul class="nav-dropdown">
-                                <li class="nav-dropdown__item">
-                                    <a href="about-community" class="nav-dropdown__item-link">О сообществе</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="team" class="nav-dropdown__item-link">Команда</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="purposes" class="nav-dropdown__item-link">Цели</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="tasks" class="nav-dropdown__item-link">Задачи</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="statutory-documents" class="nav-dropdown__item-link">Уставные документы</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="reports" class="nav-dropdown__item-link">Отчеты</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="contacts" class="nav-dropdown__item-link">Контакты</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="partners" class="nav-dropdown__item-link">Партнёры</a>
-                                </li>
-                            </ul>
+                            <?php
+                            $parent_page_slug = 'about-community'; // Replace with the slug of the parent page
+                            $parent_page = get_page_by_path($parent_page_slug);
+                            $args = array(
+                                'child_of' => $parent_page->ID,
+                                'sort_order' => 'asc',
+                                'sort_column' => 'menu_order',
+                            );
+                            $pages = get_pages($args);
+                            if ($pages) {
+                                echo '<ul class="nav-dropdown">';
+                                foreach ($pages as $page) {
+                                    $link = get_page_link($page->ID);
+                                    $title = $page->post_title;
+                                    echo '<li class="nav-dropdown__item">';
+                                    echo '<a href="' . $link . '" class="nav-dropdown__item-link">' . $title . '</a>';
+                                    echo '</li>';
+                                }
+                                echo '</ul>';
+                            }
+                            ?>
                         </li>
                         <li class="nav__item">
-                            <a href="news" class="nav__item-link">Материалы</a>
-                            <ul class="nav-dropdown">
-                                <li class="nav-dropdown__item">
-                                    <a href="news" class="nav-dropdown__item-link">Новости</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="articles" class="nav-dropdown__item-link">Статьи</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="stories" class="nav-dropdown__item-link">Истории</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="literature" class="nav-dropdown__item-link">Литература</a>
-                                </li>
-                            </ul>
+                            <a href="#" class="nav__item-link">Материалы</a>
+                            <?php
+                            $parent_page_slug = 'materials'; // Replace with the slug of the parent page
+                            $parent_page = get_page_by_path($parent_page_slug);
+                            $args = array(
+                                'child_of' => $parent_page->ID,
+                                'sort_order' => 'asc',
+                                'sort_column' => 'menu_order',
+                            );
+                            $pages = get_pages($args);
+                            if ($pages) {
+                                echo '<ul class="nav-dropdown">';
+                                foreach ($pages as $page) {
+                                    $link = get_page_link($page->ID);
+                                    $title = $page->post_title;
+                                    echo '<li class="nav-dropdown__item">';
+                                    echo '<a href="' . $link . '" class="nav-dropdown__item-link">' . $title . '</a>';
+                                    echo '</li>';
+                                }
+                                echo '</ul>';
+                            }
+                            ?>
                         </li>
                         <li class="nav__item">
-                            <a href="club" class="nav__item-link">Программы и проекты</a>
-                            <ul class="nav-dropdown">
-                                <li class="nav-dropdown__item">
-                                    <a href="club" class="nav-dropdown__item-link">Клуб приёмных родителей</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="resource-groups" class="nav-dropdown__item-link">Ресурсные кружки "На
-                                        равных"</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="school" class="nav-dropdown__item-link">Школа осознанного родительства</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="post-boarding-support" class="nav-dropdown__item-link">Постинтернатное
-                                        сопровождение</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="sos-help" class="nav-dropdown__item-link">Помощь в тяжелой жизненной
-                                        ситуации</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="consultation" class="nav-dropdown__item-link">Консультация специалистов</a>
-                                </li>
-                                <li class="nav-dropdown__item">
-                                    <a href="to-future-parents" class="nav-dropdown__item-link">Будущим приёмным
-                                        родителям</a>
-                                </li>
-                            </ul>
+                            <a href="#" class="nav__item-link">Программы и проекты</a>
+                            <?php
+                            $parent_page_slug = 'programs-and-projects'; // Replace with the slug of the parent page
+                            $parent_page = get_page_by_path($parent_page_slug);
+                            $args = array(
+                                'child_of' => $parent_page->ID,
+                                'sort_order' => 'asc',
+                                'sort_column' => 'menu_order',
+                            );
+                            $pages = get_pages($args);
+                            if ($pages) {
+                                echo '<ul class="nav-dropdown">';
+                                foreach ($pages as $page) {
+                                    $link = get_page_link($page->ID);
+                                    $title = $page->post_title;
+                                    echo '<li class="nav-dropdown__item">';
+                                    echo '<a href="' . $link . '" class="nav-dropdown__item-link">' . $title . '</a>';
+                                    echo '</li>';
+                                }
+                                echo '</ul>';
+                            }
+                            ?>
                         </li>
                         <li class="nav__item">
-                            <a href="employee-offers" class="nav__item-link">Предложения о сотрудниках</a>
+                            <a href="cooperation-proposal" class="nav__item-link">Предложения о сотрудничестве</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
-
         <div class="page__box-1">
             <?php get_header(); ?>
             <main class="main container">

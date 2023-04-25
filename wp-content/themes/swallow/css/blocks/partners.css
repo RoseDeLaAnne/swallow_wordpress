@@ -2,9 +2,15 @@
     margin-top: 32px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
-    gap: 64px;
+    gap: calc(16px + (80 - 16) * (100vw - 320px) / (1920 - 320));
+}
+
+@media (max-width: 576px) {
+    .partners__box-1 {
+        grid-template-columns: 1fr;
+    }
 }
 
 .partners__item {
