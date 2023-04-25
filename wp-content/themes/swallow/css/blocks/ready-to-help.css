@@ -10,4 +10,8 @@
   background-color: yellow;
 
   animation: readyToHelp 1.5s ease-in-out infinite alternate;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
