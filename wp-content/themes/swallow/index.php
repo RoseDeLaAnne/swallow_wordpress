@@ -85,7 +85,6 @@
                                             // template name as stored in the dB
                                         )
                                     )
-
                                 );
                                 $loop = new WP_Query($args);
                                 if ($loop->have_posts()) {
