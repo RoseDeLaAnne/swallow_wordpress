@@ -120,7 +120,7 @@ Template Name: articles
                     <?php the_title(); ?>
                 </h1>
                 <?php
-                $posts_per_page = 1; // number of posts to show per page
+                $posts_per_page = 15; // number of posts to show per page
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // get current page number
                 $args = array(
                     'post_type' => 'post',
